@@ -137,6 +137,12 @@ void QsciDisplayWindow::setIsShowFindItem(bool v)
 	m_isShowFindItem = v;
 }
 
+void QsciDisplayWindow::setText(const QString& text)
+{
+	QsciScintilla::clear();
+	// append() uses SCI_APPENDTEXT with an explicit byte length, preserving embedded NUL bytes.
+	QsciScintilla::append(text);
+}
 
 sptr_t QsciDisplayWindow::execute(quint32 Msg, uptr_t wParam, sptr_t lParam) const {
 	try {

@@ -27,6 +27,7 @@ public:
 	virtual ~QsciDisplayWindow();
 
 	void setIsShowFindItem(bool v);
+	void setText(const QString& text) override;
 	sptr_t execute(quint32 Msg, uptr_t wParam = 0, sptr_t lParam = 0) const;
 	void setMediator(MediatorDisplay* mediator);
 
